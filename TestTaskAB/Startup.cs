@@ -13,6 +13,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Service.Services;
+using DataAccess.Model;
+using Microsoft.EntityFrameworkCore;
+using DataAccess.UserDateAccess;
 
 namespace TestTaskAB
 {
@@ -34,8 +37,10 @@ namespace TestTaskAB
             services.AddJsEngineSwitcher(options => options.DefaultEngineName = ChakraCoreJsEngine.EngineName).AddChakraCore();
 
             services.AddControllers();
-
-            services.AddTransient<IUserDateService, UserDateService>();
+            services.AddDbContext<TestTaskABContext>(options =>
+                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=helloappdb;Trusted_Connection=True;"));
+            services.AddScoped<IUserDateAccess, UserDateAccess>();
+            services.AddScoped<IUserDateService, UserDateService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

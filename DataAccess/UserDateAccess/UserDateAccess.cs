@@ -13,9 +13,9 @@ namespace DataAccess.UserDateAccess
     {
         private TestTaskABContext db;
         public IEnumerable<EntityEntry> el;
-        public UserDateAccess()
+        public UserDateAccess(TestTaskABContext testTaskABContext)
         {
-            db = (TestTaskABContext)DbContextProviderFactory.ServiceProvider.GetService(typeof(TestTaskABContext));
+            db = testTaskABContext;
             db.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
 
         }

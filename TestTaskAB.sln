@@ -3,11 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTaskAB", "TestTaskAB\TestTaskAB.csproj", "{74FEB638-EC75-4A67-9959-19DB75EA6CB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTaskAB", "TestTaskAB\TestTaskAB.csproj", "{74FEB638-EC75-4A67-9959-19DB75EA6CB6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BA0661C1-5E7B-496D-93D7-3D8505AEAC27} = {BA0661C1-5E7B-496D-93D7-3D8505AEAC27}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{BA0661C1-5E7B-496D-93D7-3D8505AEAC27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{BA0661C1-5E7B-496D-93D7-3D8505AEAC27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{A99A676B-EA8A-4629-A04C-874B21B6CBCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{A99A676B-EA8A-4629-A04C-874B21B6CBCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -14,9 +14,9 @@ namespace Service.Services
     {
         private IUserDateAccess Database;
 
-        public UserDateService()
+        public UserDateService(IUserDateAccess userDateAccess)
         {
-            Database = (IUserDateAccess)ServiceProviderFactorys.ServiceProvider.GetService(typeof(IUserDateAccess));
+            Database = userDateAccess;
         }
         public void Dispose()
         {

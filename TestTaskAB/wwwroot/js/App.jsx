@@ -43,21 +43,30 @@
     }
     onAddUserDateList(userDates) {
         if (userDates) {
+            let response = fetch(this.props.apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body: JSON.stringify(userDates)
+            });
 
-            const data = new FormData();
-            for (const element of userDates) {
-                data.append("userDate[]", element);
-            }
             
-            var xhr = new XMLHttpRequest();
+            //const data = new FormData();
+            //data.append("userDate", JSON.stringify(userDates));
+            ////for (let element of userDates) {
+            ////    data.append("userDate", element);
+            ////}
+            
+            //var xhr = new XMLHttpRequest();
 
-            xhr.open("post", this.props.apiUrl, true);
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    this.loadData();
-                }
-            }.bind(this);
-            xhr.send(data);
+            //xhr.open("post", this.props.apiUrl, true);
+            //xhr.onload = function () {
+            //    if (xhr.status === 200) {
+            //        this.loadData();
+            //    }
+            //}.bind(this);
+            //xhr.send(data);
         }
     }
     render() {
